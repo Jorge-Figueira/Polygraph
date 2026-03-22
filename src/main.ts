@@ -32,15 +32,23 @@ const { scene, renderer, controls, camera } = createScene(canvas);
 scene.add(createAxes(10));
 scene.add(createGridPlane(20, 20, 0x888888, 0.3));
 
-const box = createObject("box", { width: 1, height: 1, depth: 1 }, { color: 0xffff00, opacity: 0.5 });
+const box = createObject("box", { width: 1, height: 1, depth: 1 }, {
+  color: 0xffff00,
+  edgeColor: 0xffff00,
+  opacity: 0.3,
+});
 box.position.set(2, 0.5, 0);
 scene.add(box);
 
-const box_two = createObject("box", { width: 1, height: 1, depth: 1 }, { color: 0x00ffff, opacity: 0.5 });
+const box_two = createObject("box", { width: 1, height: 1, depth: 1 }, {
+  color: 0x00ffff,
+  edgeColor: 0x00ffff,
+  opacity: 0.3,
+});
 box_two.position.set(1.5, 0.5, 0);
 scene.add(box_two);
 
-scene.add(createAxesPlanes(10, 0.15));
+scene.add(createAxesPlanes(10, 0.30));
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.95);
 scene.add(ambientLight);
